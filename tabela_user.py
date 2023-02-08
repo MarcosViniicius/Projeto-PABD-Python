@@ -6,7 +6,7 @@ import datetime
 
 hora_atual = datetime.datetime.now()
 
-con = criar_conexao("containers-us-west-160.railway.app", "5501", "root", "EcuYhxRWOfvlPvLKj6Ef", "railway")
+con = criar_conexao("localhost", "3306", "root", "", "project")
 
 def insere_usuario(con, name, password, updatedAt, createdAt):
     cursor = con.cursor()
@@ -28,7 +28,7 @@ def select_todos_usuarios(con):
 
 
 def main():
-    con = criar_conexao("containers-us-west-160.railway.app", "5501", "root", "EcuYhxRWOfvlPvLKj6Ef", "railway")
+    con = criar_conexao("localhost", "3306", "root", "", "project")
 
     insere_usuario(con, "Teste", "123", hora_atual, hora_atual)
     select_todos_usuarios(con)
@@ -36,7 +36,7 @@ def main():
     fechar_conexao(con)
 
 def conectar():
-    criar_conexao("containers-us-west-160.railway.app", "5501", "root", "EcuYhxRWOfvlPvLKj6Ef", "railway")
+    con = criar_conexao("localhost", "3306", "root", "", "project")
 
 
 senhasdb = []
@@ -57,7 +57,7 @@ def consultar():
     # print(usuariosdb)
     # print(cursor.rowcount)
 
-if __name__ == "__main__":
+if __name__ == "__tabela_user__":
     main()
 
     

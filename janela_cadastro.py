@@ -1,5 +1,5 @@
 from conexao import *
-from main import *
+from tabela_user import *
 
 def Janela_Cadastro():
     consultar()
@@ -9,8 +9,6 @@ def Janela_Cadastro():
         [sg.Text('Senha'), sg.Input(key='senha', password_char='*')],
         [sg.Button('Cadastrar'), sg.Button('Voltar')]
     ]
-
-
     return sg.Window('Tela de Cadastro', layout=layout, finalize=True)
   
 
